@@ -1,0 +1,158 @@
+/* ===== 1. Reset та box-sizing ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* width/height враховують padding і border */
+}
+
+/* ===== 2. Селектори тегів ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f4f6f8;
+}
+
+header {
+  padding: 24px;
+  background-color: #1e3a8a;
+  color: #fff;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 8px;
+}
+
+h2 {
+  margin-top: 0;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #1e3a8a;
+  color: #1e3a8a;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+footer {
+  padding: 16px;
+  text-align: center;
+  background-color: #1e293b;
+  color: #cbd5e1;
+}
+
+/* ===== 3. Макет на Flexbox ===== */
+.layout {
+  display: flex;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.content {
+  flex: 2;
+}
+
+/* ===== 4. Селектори класів ===== */
+.card {
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+}
+
+.highlight {
+  background-color: #fef9c3;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #1e3a8a;
+  border-radius: 6px;
+  color: #1e3a8a;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ===== 5. Селектор ID ===== */
+#contacts {
+  background-color: #eff6ff;
+  border-color: #93c5fd;
+}
+
+/* ===== 6. Селектори атрибутів ===== */
+a[href^="http"] {
+  color: #1d4ed8;
+}
+
+a[href^="mailto:"] {
+  color: #047857;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 6px 10px;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
+}
+
+/* ===== 7. Псевдокласи ===== */
+a:hover {
+  text-decoration: underline;
+}
+
+.btn:hover {
+  background-color: #1e3a8a;
+  color: #fff;
+}
+
+input:focus {
+  outline: 2px solid #1e3a8a;
+  border-color: #1e3a8a;
+}
+
+li:first-child {
+  font-weight: bold;
+}
+
+ul li:nth-child(even) {
+  color: #475569;
+}
+
+/* ===== 8. Медіазапит: вузький екран ===== */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column; /* колонки стають одна під одною */
+  }
+
+  header {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
