@@ -1,24 +1,8 @@
-function Job({ title, period, duties }) {
-  return (
-    <article>
-      <h3>{title}</h3>
-      <p>{period}</p>
-      <ul>
-        {duties.map((d) => <li key={d}>{d}</li>)}
-      </ul>
-    </article>
-  );
-}
-
 function Experience() {
   return (
-    <section id="experience">
-      <h2>Досвід роботи</h2>
-      <Job
-        title="Посада — Компанія"
-        period="01.2025 – 06.2025"
-        duties={["Обов'язок 1", "Обов'язок 2"]}
-      />
+    <section id="experience" className="bg-white rounded-xl shadow-md p-6 border-l-4 border-blue-600 hover:shadow-lg transition-shadow">
+      <h2 className="text-2xl font-bold text-blue-800 mb-3">Досвід роботи</h2>
+      <p className="italic text-slate-500">Немає досвіду роботи.</p>
     </section>
   );
 }
