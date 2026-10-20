@@ -1,4 +1,20 @@
+import { useState, useEffect } from 'react';
+
 function Footer() {
+  const [sysInfo, setSysInfo] = useState({ userAgent: '', platform: '' });
+
+  useEffect(() => {
+    // зберігаємо в localStorage
+    localStorage.setItem('userAgent', navigator.userAgent);
+    localStorage.setItem('platform', navigator.platform);
+
+    // зчитуємо з localStorage для відображення
+    setSysInfo({
+      userAgent: localStorage.getItem('userAgent'),
+      platform: localStorage.getItem('platform'),
+    });
+  }, []);
+
   return (
     <footer className="bg-slate-800 text-slate-200 py-8 px-6 mt-6">
       <div className="max-w-3xl mx-auto">
@@ -25,6 +41,11 @@ function Footer() {
             </a>
           </li>
         </ul>
+
+        <div className="mt-6 pt-4 border-t border-slate-600 text-sm text-slate-400">
+          <p><b>userAgent:</b> {sysInfo.userAgent}</p>
+          <p><b>platform:</b> {sysInfo.platform}</p>
+        </div>
       </div>
     </footer>
   );
