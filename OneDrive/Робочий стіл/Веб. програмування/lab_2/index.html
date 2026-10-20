@@ -18,6 +18,7 @@
     <!-- inline -->
     <h1 style="letter-spacing: 1px;">Коломієць Олександр</h1>
     <p>Студент спеціальності «Кібербезпека»</p>
+    <button id="themeToggle" type="button">🌙 / ☀️</button>
   </header>
 
   <div class="layout">
@@ -58,11 +59,31 @@
           <p>Національний університет «Львівська політехніка», спеціальність «Кібербезпека», 2025 – н. ч.</p>
         </article>
       </section>
+
+      <section id="reviews">
+        <h2>Відгуки</h2>
+        <div id="reviewsList"></div>
+      </section>
     </main>
   </div>
 
-  <footer>
+  <footer id="footer">
     <p>© 2026 Коломієць Олександр</p>
   </footer>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" type="button">Закрити</button>
+      <form action="https://formspree.io/f/xnpjkdzd" method="POST">
+        <input type="text" name="name" placeholder="Ім'я" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="phone" placeholder="Номер телефону" required>
+        <textarea name="message" placeholder="Повідомлення" required></textarea>
+        <button type="submit">Надіслати</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
