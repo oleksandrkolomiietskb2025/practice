@@ -35,7 +35,7 @@ loadReviews();
 
 // 3. Модалка через 1 хв
 const modal = document.getElementById('modal');
-setTimeout(() => modal.classList.remove('hidden'), 3000);
+setTimeout(() => modal.classList.remove('hidden'), 60000);
 document.getElementById('closeModal')
   .addEventListener('click', () => modal.classList.add('hidden'));
 

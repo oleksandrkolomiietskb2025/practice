@@ -158,7 +158,7 @@ ul li:nth-child(even) {
 }
 
 /* ===== Lab 4: модалка ===== */
-.hidden { display: none; }
+.hidden { display: none !important; }
 
 .modal {
   position: fixed;
@@ -222,4 +222,46 @@ body.dark .review {
 body.dark h2 {
   color: #93c5fd;
   border-bottom-color: #93c5fd;
+}
+
+/* ===== Lab 4: повзунок теми ===== */
+#themeToggle {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 32px;
+  margin: 12px auto 0;
+  padding: 0;
+  border: none;
+  border-radius: 32px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#themeToggle::after {
+  content: '☀️';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+body.dark #themeToggle {
+  background: #334155;
+}
+
+body.dark #themeToggle::after {
+  content: '🌙';
+  transform: translateX(32px);
 }
